@@ -27,5 +27,6 @@ type Query {
 type Mutation {
     createNote(imageUrl: String, title: String!, description: String, category: Category!): Note
     updateNote(id: ID!, imageUrl: String, title: String, description: String, category: Category): Note
+    updateNoteImage(id: ID!, imageUrl: String!): Note!
     deleteNoteById(id: ID!): Boolean
 }

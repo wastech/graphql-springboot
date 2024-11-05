@@ -29,6 +29,11 @@ public class NoteMutationResolver {
     }
 
     @MutationMapping
+    public Note updateNoteImage(@Argument Long id, @Argument String imageUrl) {
+        return noteService.updateNoteImage(id, imageUrl);
+    }
+
+    @MutationMapping
     public Note updateNote(
         @Argument String id,
         @Argument(name = "imageUrl") String imageUrl,
@@ -40,7 +45,7 @@ public class NoteMutationResolver {
     }
 
     @MutationMapping
-    public Boolean deleteNoteById(@Argument String id) {
+    public Boolean deleteNoteById(@Argument Long id) {
         return noteService.deleteNoteById(id);
     }
 }

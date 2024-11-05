@@ -21,6 +21,13 @@ public class NoteQueryResolver {
     }
 
     @QueryMapping
+
+    /**
+     * Retrieves a note by its ID.
+     *
+     * @param id the ID of the note
+     * @return the note with the given ID
+     */
     public Note getNoteById(@Argument Long id) {
         return noteService.findById(id);
     }
